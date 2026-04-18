@@ -23,6 +23,20 @@ The word is saved as `{word::tooltip}` in your note.
 
 Switch to **Reading View** and hover over any underlined word to see its tooltip.
 
+### Word highlight style
+
+You can choose how marked words appear in Reading View. Open **Settings → Vocab Hover → Word highlight style** and pick one of the following:
+
+| Style | Appearance |
+|---|---|
+| Dotted underline | Dotted underline in accent color (default) |
+| Solid underline | Bold solid underline in accent color |
+| Highlight | Soft background tint in accent color |
+| Badge | Filled rounded badge in accent color |
+| Box | Rectangular border around the word |
+
+The style applies instantly — no need to reload.
+
 ### Vocabulary list
 
 All marked words across your vault can be collected into a single reference note.
