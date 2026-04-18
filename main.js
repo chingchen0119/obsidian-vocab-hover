@@ -139,8 +139,8 @@ module.exports = class VocabHoverPlugin extends Plugin {
       })
     );
 
-    // 閱讀模式渲染
-    this.registerMarkdownPostProcessor(el => this.render(el));
+    // 閱讀模式渲染（延遲執行，確保在其他 post-processor 之後跑）
+    this.registerMarkdownPostProcessor(el => setTimeout(() => this.render(el), 0));
 
     // 監聽檔案變更 → 只有在單字清單已存在時才自動更新
     this.registerEvent(
@@ -224,6 +224,7 @@ module.exports = class VocabHoverPlugin extends Plugin {
     let n;
     while ((n = walk.nextNode())) {
       if (n.parentElement?.closest('code, pre')) continue;
+      PATTERN.lastIndex = 0;
       if (PATTERN.test(n.textContent)) nodes.push(n);
     }
     for (const textNode of nodes) {
