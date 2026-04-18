@@ -1,0 +1,10 @@
+{
+  "id": "vocab-hover",
+  "name": "Vocab Hover",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Add hover tooltips to words by right-clicking selected text. Perfect for vocabulary learning.",
+  "author": "Ching Chen",
+  "authorUrl": "https://github.com/chingchen0119",
+  "isDesktopOnly": false
+}
