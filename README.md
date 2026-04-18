@@ -38,7 +38,9 @@ All marked words across your vault can be collected into a single reference note
 1. Open **Settings → Vocab Hover**
 2. Click **Generate**
 
-A note (default: `Vocabulary List.md`) will be created with a table of every word and its translation, linked back to the source note. Once generated, the list updates automatically whenever you save any note.
+![vocab list preview](vocab-list-preview.svg)
+
+A note (default: `Vocabulary List.md`) will be created with a table of every word and its content, linked back to the source note. Once generated, the list updates automatically whenever you save any note.
 
 The note path can be changed in settings.
 

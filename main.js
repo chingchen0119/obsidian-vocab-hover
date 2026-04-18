@@ -214,7 +214,7 @@ module.exports = class VocabHoverPlugin extends Plugin {
 
     const now = new Date().toISOString().slice(0, 10);
     let md = `*Last updated: ${now}*\n\n`;
-    md += `| Word | Translation | Source |\n`;
+    md += `| Word | Content | Source |\n`;
     md += `|---|---|---|\n`;
 
     for (const src of Object.keys(groups).sort()) {
