@@ -4,40 +4,47 @@ const PATTERN = /\{([^:{}]+)::([^{}]+)\}/g;
 
 const LANG = {
   en: {
-    menuItem:    'Add Hover Content',
-    modalTitle:  (word) => `Hover content for "${word}"`,
-    placeholder: 'Enter tooltip text...',
-    confirm:     'Confirm',
-    settingLang: 'Language',
+    menuItem:        'Add Hover Content',
+    modalTitle:      (word) => `Hover content for "${word}"`,
+    placeholder:     'Enter tooltip text...',
+    confirm:         'Confirm',
+    settingLang:     'Language',
     settingLangDesc: 'Language for menus and dialogs.',
-    settingNote: 'Vocabulary note path',
+    settingNote:     'Vocabulary note path',
     settingNoteDesc: 'Path of the vocabulary list note.',
-    settingGenerate: 'Generate Vocabulary List',
+    settingStyle:    'Word highlight style',
+    settingStyleDesc:'Visual style for words with hover content.',
+    styleOptions:    { dotted: 'Dotted underline', solid: 'Solid underline', highlight: 'Highlight', badge: 'Badge', box: 'Box' },
+    settingGenerate:     'Generate Vocabulary List',
     settingGenerateDesc: 'Scan all notes and create the vocabulary list. Once created, it will update automatically on save.',
-    settingGenerateBtn: 'Generate',
+    settingGenerateBtn:  'Generate',
     noticeGenerated: 'Vocabulary list generated.',
-    noticeUpdated: 'Vocabulary list updated.',
+    noticeUpdated:   'Vocabulary list updated.',
   },
   zh: {
-    menuItem:    '新增 Hover 內容',
-    modalTitle:  (word) => `「${word}」的 Hover 內容`,
-    placeholder: '輸入顯示文字，例如：漫射',
-    confirm:     '確定',
-    settingLang: '語言',
+    menuItem:        '新增 Hover 內容',
+    modalTitle:      (word) => `「${word}」的 Hover 內容`,
+    placeholder:     '輸入顯示文字，例如：漫射',
+    confirm:         '確定',
+    settingLang:     '語言',
     settingLangDesc: '選單與對話框的顯示語言。',
-    settingNote: '單字清單筆記路徑',
+    settingNote:     '單字清單筆記路徑',
     settingNoteDesc: '單字清單筆記的位置。',
-    settingGenerate: '產生單字清單',
+    settingStyle:    '單字標示樣式',
+    settingStyleDesc:'有 Hover 內容的單字顯示方式。',
+    styleOptions:    { dotted: '虛線底線', solid: '實線底線', highlight: '螢光底色', badge: '標籤', box: '方塊框線' },
+    settingGenerate:     '產生單字清單',
     settingGenerateDesc: '掃描所有筆記並建立單字清單。建立後每次儲存時會自動更新。',
-    settingGenerateBtn: '產生',
+    settingGenerateBtn:  '產生',
     noticeGenerated: '單字清單已產生。',
-    noticeUpdated: '單字清單已更新。',
+    noticeUpdated:   '單字清單已更新。',
   },
 };
 
 const DEFAULT_SETTINGS = {
   language: 'en',
   vocabNotePath: 'Vocabulary List.md',
+  wordStyle: 'dotted',
 };
 
 // ── Modal ──────────────────────────────────────────────────
@@ -88,6 +95,18 @@ class VocabSettingTab extends PluginSettingTab {
       );
 
     const t = LANG[plugin.settings.language];
+
+    new Setting(containerEl)
+      .setName(t.settingStyle)
+      .setDesc(t.settingStyleDesc)
+      .addDropdown(drop => {
+        Object.entries(t.styleOptions).forEach(([val, label]) => drop.addOption(val, label));
+        drop.setValue(plugin.settings.wordStyle)
+          .onChange(async val => {
+            plugin.settings.wordStyle = val;
+            await plugin.saveSettings();
+          });
+      });
 
     new Setting(containerEl)
       .setName(t.settingNote)
@@ -236,7 +255,7 @@ module.exports = class VocabHoverPlugin extends Plugin {
         if (m.index > last)
           frag.appendChild(document.createTextNode(text.slice(last, m.index)));
         const span = document.createElement('span');
-        span.className = 'vocab-hover';
+        span.className = `vocab-hover vocab-style-${this.settings.wordStyle}`;
         span.dataset.tooltip = m[2].trim();
         span.textContent = m[1].trim();
         frag.appendChild(span);

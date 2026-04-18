@@ -1,12 +1,45 @@
-/* ── Vocab Hover Tooltip ──────────────────────────────── */
+/* ── Vocab Hover Base ─────────────────────────────────── */
 
 .vocab-hover {
-  text-decoration: underline dotted var(--color-accent);
-  text-underline-offset: 3px;
   cursor: help;
   position: relative;
-  display: inline-block;
+  display: inline;
 }
+
+/* ── Styles ───────────────────────────────────────────── */
+
+.vocab-style-dotted {
+  text-decoration: underline dotted var(--color-accent);
+  text-underline-offset: 3px;
+}
+
+.vocab-style-solid {
+  text-decoration: underline solid var(--color-accent);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+}
+
+.vocab-style-highlight {
+  background-color: color-mix(in srgb, var(--color-accent) 25%, transparent);
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+.vocab-style-badge {
+  background-color: var(--color-accent);
+  color: var(--text-on-accent);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 0.9em;
+}
+
+.vocab-style-box {
+  border: 1.5px solid var(--color-accent);
+  border-radius: 3px;
+  padding: 0 3px;
+}
+
+/* ── Tooltip ──────────────────────────────────────────── */
 
 .vocab-hover::after {
   content: attr(data-tooltip);
