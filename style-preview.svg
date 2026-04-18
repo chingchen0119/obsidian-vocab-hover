@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="220" viewBox="0 0 520 220" font-family="system-ui, -apple-system, sans-serif" font-size="15">
+
+  <!-- Background -->
+  <rect width="520" height="220" rx="10" fill="#1e1e2e"/>
+
+  <!-- Row 1: Dotted underline -->
+  <text x="30" y="48" fill="#6c7086">Dotted underline</text>
+  <text x="220" y="48" fill="#cdd6f4">I need some </text>
+  <text x="315" y="48" fill="#cdd6f4" text-decoration="underline" text-decoration-style="dotted" text-decoration-color="#7c6af7">reassurance</text>
+  <text x="415" y="48" fill="#cdd6f4"> today.</text>
+
+  <!-- Row 2: Solid underline -->
+  <text x="30" y="88" fill="#6c7086">Solid underline</text>
+  <text x="220" y="88" fill="#cdd6f4">I need some </text>
+  <text x="315" y="88" fill="#cdd6f4" text-decoration="underline" text-decoration-color="#7c6af7">reassurance</text>
+  <text x="415" y="88" fill="#cdd6f4"> today.</text>
+
+  <!-- Row 3: Highlight -->
+  <text x="30" y="128" fill="#6c7086">Highlight</text>
+  <text x="220" y="128" fill="#cdd6f4">I need some </text>
+  <rect x="313" y="112" width="100" height="20" rx="3" fill="#7c6af7" fill-opacity="0.25"/>
+  <text x="315" y="128" fill="#cdd6f4">reassurance</text>
+  <text x="415" y="128" fill="#cdd6f4"> today.</text>
+
+  <!-- Row 4: Badge -->
+  <text x="30" y="168" fill="#6c7086">Badge</text>
+  <text x="220" y="168" fill="#cdd6f4">I need some </text>
+  <rect x="311" y="152" width="104" height="20" rx="4" fill="#7c6af7"/>
+  <text x="315" y="168" fill="#ffffff">reassurance</text>
+  <text x="415" y="168" fill="#cdd6f4"> today.</text>
+
+  <!-- Row 5: Box -->
+  <text x="30" y="208" fill="#6c7086">Box</text>
+  <text x="220" y="208" fill="#cdd6f4">I need some </text>
+  <rect x="312" y="192" width="102" height="20" rx="3" fill="none" stroke="#7c6af7" stroke-width="1.5"/>
+  <text x="315" y="208" fill="#cdd6f4">reassurance</text>
+  <text x="415" y="208" fill="#cdd6f4"> today.</text>
+
+</svg>

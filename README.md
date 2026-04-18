@@ -27,7 +27,9 @@ Switch to **Reading View** and hover over any underlined word to see its tooltip
 
 You can choose how marked words appear in Reading View. Open **Settings → Vocab Hover → Word highlight style** and pick one of the following:
 
-| Style | Appearance |
+![style preview](style-preview.svg)
+
+| Style | Description |
 |---|---|
 | Dotted underline | Dotted underline in accent color (default) |
 | Solid underline | Bold solid underline in accent color |
