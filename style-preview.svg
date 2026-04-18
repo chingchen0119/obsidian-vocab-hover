@@ -1,48 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="278"
-     viewBox="0 0 520 278"
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="276"
+     viewBox="0 0 520 276"
      font-family="'Segoe UI', system-ui, -apple-system, sans-serif"
-     font-size="14" fill="#374151">
+     font-size="14" fill="#1f2937">
 
   <!-- Background + border -->
-  <rect width="520" height="278" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+  <rect width="520" height="276" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
 
   <!-- Vertical separator -->
-  <line x1="168" y1="28" x2="168" y2="250" stroke="#f3f4f6" stroke-width="1"/>
+  <line x1="168" y1="28" x2="168" y2="248" stroke="#d1d5db" stroke-width="1.5"/>
 
-  <!-- Row separators -->
-  <line x1="28" y1="84" x2="492" y2="84" stroke="#f9fafb" stroke-width="1"/>
-  <line x1="28" y1="128" x2="492" y2="128" stroke="#f9fafb" stroke-width="1"/>
-  <line x1="28" y1="172" x2="492" y2="172" stroke="#f9fafb" stroke-width="1"/>
-  <line x1="28" y1="216" x2="492" y2="216" stroke="#f9fafb" stroke-width="1"/>
+  <!-- Row separators (equal 44px rows, starting y=28) -->
+  <line x1="28" y1="72"  x2="492" y2="72"  stroke="#d1d5db" stroke-width="1.5"/>
+  <line x1="28" y1="116" x2="492" y2="116" stroke="#d1d5db" stroke-width="1.5"/>
+  <line x1="28" y1="160" x2="492" y2="160" stroke="#d1d5db" stroke-width="1.5"/>
+  <line x1="28" y1="204" x2="492" y2="204" stroke="#d1d5db" stroke-width="1.5"/>
 
-  <!-- 1. Dotted underline -->
-  <text x="28" y="62" fill="#9ca3af" font-size="13">Dotted underline</text>
-  <text x="184" y="62">This is a </text>
-  <text x="252" y="62">test sentence</text>
-  <line x1="252" y1="65" x2="333" y2="65" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <!-- 1. Dotted underline (baseline y=56) -->
+  <text x="28" y="56" fill="#6b7280" font-size="13">Dotted underline</text>
+  <text x="184" y="56">This is a </text>
+  <text x="252" y="56">test sentence</text>
+  <line x1="252" y1="59" x2="333" y2="59" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="2,2"/>
 
-  <!-- 2. Solid underline -->
-  <text x="28" y="106" fill="#9ca3af" font-size="13">Solid underline</text>
-  <text x="184" y="106">This is a </text>
-  <text x="252" y="106">test sentence</text>
-  <line x1="252" y1="109" x2="333" y2="109" stroke="#f59e0b" stroke-width="2"/>
+  <!-- 2. Solid underline (baseline y=100) -->
+  <text x="28" y="100" fill="#6b7280" font-size="13">Solid underline</text>
+  <text x="184" y="100">This is a </text>
+  <text x="252" y="100">test sentence</text>
+  <line x1="252" y1="103" x2="333" y2="103" stroke="#f59e0b" stroke-width="2"/>
 
-  <!-- 3. Highlight -->
-  <text x="28" y="150" fill="#9ca3af" font-size="13">Highlight</text>
-  <text x="184" y="150">This is a </text>
-  <rect x="247" y="134" width="93" height="23" rx="3" fill="#f59e0b" fill-opacity="0.28"/>
-  <text x="252" y="150">test sentence</text>
+  <!-- 3. Highlight (baseline y=144) -->
+  <text x="28" y="144" fill="#6b7280" font-size="13">Highlight</text>
+  <text x="184" y="144">This is a </text>
+  <rect x="247" y="128" width="93" height="23" rx="3" fill="#f59e0b" fill-opacity="0.28"/>
+  <text x="252" y="144">test sentence</text>
 
-  <!-- 4. Badge -->
-  <text x="28" y="194" fill="#9ca3af" font-size="13">Badge</text>
-  <text x="184" y="194">This is a </text>
-  <rect x="245" y="178" width="97" height="23" rx="5" fill="#f59e0b"/>
-  <text x="252" y="194" fill="#ffffff">test sentence</text>
+  <!-- 4. Badge (baseline y=188) -->
+  <text x="28" y="188" fill="#6b7280" font-size="13">Badge</text>
+  <text x="184" y="188">This is a </text>
+  <rect x="245" y="172" width="97" height="23" rx="5" fill="#f59e0b"/>
+  <text x="252" y="188" fill="#ffffff">test sentence</text>
 
-  <!-- 5. Box -->
-  <text x="28" y="238" fill="#9ca3af" font-size="13">Box</text>
-  <text x="184" y="238">This is a </text>
-  <rect x="247" y="222" width="93" height="23" rx="3" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="252" y="238">test sentence</text>
+  <!-- 5. Box (baseline y=232) -->
+  <text x="28" y="232" fill="#6b7280" font-size="13">Box</text>
+  <text x="184" y="232">This is a </text>
+  <rect x="247" y="216" width="93" height="23" rx="3" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="252" y="232">test sentence</text>
 
 </svg>
