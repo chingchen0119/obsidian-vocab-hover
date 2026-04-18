@@ -29,14 +29,6 @@ You can choose how marked words appear in Reading View. Open **Settings → Voca
 
 ![style preview](style-preview.svg)
 
-| Style | Description |
-|---|---|
-| Dotted underline | Dotted underline in accent color (default) |
-| Solid underline | Bold solid underline in accent color |
-| Highlight | Soft background tint in accent color |
-| Badge | Filled rounded badge in accent color |
-| Box | Rectangular border around the word |
-
 The style applies instantly — no need to reload.
 
 ### Vocabulary list
