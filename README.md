@@ -59,7 +59,7 @@ The {diffuse::漫射} map controls the base color.
 1. Open **Settings → Community Plugins**
 2. Disable Safe Mode if prompted
 3. Click **Browse** and search for **Vocab Hover**
-4. Click **Install** then **Enable**
+4. Click **Install** then **Enable**.
 
 ### Manual Installation
 
