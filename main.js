@@ -141,6 +141,10 @@ module.exports = class VocabHoverPlugin extends Plugin {
     this.addSettingTab(new VocabSettingTab(this.app, this));
     this._debounceTimer = null;
 
+    this._tooltipEl = document.createElement('div');
+    this._tooltipEl.className = 'vocab-tooltip-popup';
+    document.body.appendChild(this._tooltipEl);
+
     // 右鍵選單
     this.registerEvent(
       this.app.workspace.on('editor-menu', (menu, editor) => {
@@ -232,6 +236,35 @@ module.exports = class VocabHoverPlugin extends Plugin {
     }
   }
 
+  onunload() { this._tooltipEl?.remove(); }
+
+  showTooltip(text, targetEl) {
+    const tip = this._tooltipEl;
+    tip.textContent = text;
+    tip.style.display = 'block';
+    tip.style.opacity = '0';
+
+    const rect = targetEl.getBoundingClientRect();
+    const tipRect = tip.getBoundingClientRect();
+
+    let top = rect.top - tipRect.height - 10;
+    let left = rect.left + rect.width / 2 - tipRect.width / 2;
+
+    if (left < 8) left = 8;
+    if (left + tipRect.width > window.innerWidth - 8) left = window.innerWidth - tipRect.width - 8;
+    if (top < 8) top = rect.bottom + 10;
+
+    tip.style.top = top + 'px';
+    tip.style.left = left + 'px';
+    tip.style.opacity = '1';
+  }
+
+  hideTooltip() {
+    const tip = this._tooltipEl;
+    tip.style.opacity = '0';
+    tip.style.display = 'none';
+  }
+
   async loadSettings() {
     this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
   }
@@ -254,10 +287,14 @@ module.exports = class VocabHoverPlugin extends Plugin {
       while ((m = PATTERN.exec(text)) !== null) {
         if (m.index > last)
           frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+        const word = m[1].trim();
+        const translation = m[2].trim();
         const span = document.createElement('span');
         span.className = `vocab-hover vocab-style-${this.settings.wordStyle}`;
-        span.dataset.tooltip = m[2].trim();
-        span.textContent = m[1].trim();
+        span.dataset.tooltip = translation;
+        span.textContent = word;
+        span.addEventListener('mouseenter', () => this.showTooltip(translation, span));
+        span.addEventListener('mouseleave', () => this.hideTooltip());
         frag.appendChild(span);
         last = m.index + m[0].length;
       }

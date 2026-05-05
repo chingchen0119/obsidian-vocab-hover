@@ -41,12 +41,9 @@
 
 /* ── Tooltip ──────────────────────────────────────────── */
 
-.vocab-hover::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: calc(100% + 7px);
-  left: 50%;
-  transform: translateX(-50%);
+.vocab-tooltip-popup {
+  display: none;
+  position: fixed;
   background-color: var(--background-secondary);
   color: var(--text-normal);
   border: 1px solid var(--background-modifier-border);
@@ -56,26 +53,6 @@
   white-space: nowrap;
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
   z-index: 9999;
-  opacity: 0;
   pointer-events: none;
   transition: opacity 0.12s ease;
-}
-
-.vocab-hover::before {
-  content: "";
-  position: absolute;
-  bottom: calc(100% + 2px);
-  left: 50%;
-  transform: translateX(-50%);
-  border: 5px solid transparent;
-  border-top-color: var(--background-modifier-border);
-  z-index: 9999;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.12s ease;
-}
-
-.vocab-hover:hover::after,
-.vocab-hover:hover::before {
-  opacity: 1;
 }
